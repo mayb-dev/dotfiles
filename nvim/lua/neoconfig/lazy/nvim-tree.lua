@@ -1,0 +1,25 @@
+return {}
+-- return {
+--   "nvim-tree/nvim-tree.lua",
+--   version = "*",
+--   lazy = false,
+--   update_focused_file = {
+--     enabled = true,
+--   },
+--   dependencies = {
+--     "nvim-tree/nvim-web-devicons",
+--   },
+--   config = function()
+--     local ntree = require("nvim-tree")
+--     ntree.setup {}
+--
+--     vim.keymap.set("n", "<leader><leader>", function ()
+--       vim.cmd(":NvimTreeToggle")
+--     end)
+--
+--     vim.keymap.set("n", "<leader>t", function ()
+--       vim.cmd(":NvimTreeFindFile")
+--     end)
+--
+--   end,
+-- }

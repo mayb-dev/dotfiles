@@ -1,0 +1,10 @@
+cursor-style = underline
+theme = Rose Pine
+background-opacity = 0.75
+background-blur = 15
+font-family = Hurmit Nerd Font Mono
+font-size = 15
+window-padding-x = 15
+window-padding-y = 15
+window-theme = ghostty
+confirm-close-surface = false

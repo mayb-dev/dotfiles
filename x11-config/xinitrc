@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# ~/.xinitrc
+
+# Optional: Load Nix environment if needed for qtile
+if [ -f ~/.nix-profile/etc/profile.d/nix-daemon.sh ]; then
+    source ~/.nix-profile/etc/profile.d/nix-daemon.sh
+fi
+
+# Start Qtile
+exec qtile start
