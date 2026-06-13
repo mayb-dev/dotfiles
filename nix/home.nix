@@ -1,14 +1,15 @@
-{config, pkgs, nixgl, ...} : 
+{config, pkgs, nixgl, lib, ...} : 
 
 let
-  dotfilesDir = "/home/mpatel/develop/dotfiles";
+  homeDir = "/home/mpatel";
+  dotfilesDir = "${homeDir}/develop/dotfiles";
 in
 
 {
   
   home.stateVersion = "26.05";
   home.username = "mpatel";
-  home.homeDirectory = "/home/mpatel";
+  home.homeDirectory = "${homeDir}";
 
   programs.home-manager.enable = true;
 
@@ -31,14 +32,46 @@ in
     installScripts = ["mesa"];
   };
 
+  fonts.fontconfig.enable = true;
+  fonts.fontconfig.defaultFonts = {
+    monospace = ["Hurmit Nerd Font"];
+  };
+
+  xdg.configFile."fontconfig/fonts.conf".text = ''
+    <?xml version="1.0"?>
+    <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+    <fontconfig>
+      <include ignore_missing="yes">conf.d</include>
+    </fontconfig>
+  '';
+
   home.packages = with pkgs; [
     neovim
+    go
+    gcc
     btop
+    ripgrep
     fastfetch
+
+    fontconfig
+    nerd-fonts.hurmit
+    # display stuff to be move to module 
     (config.lib.nixGL.wrap ghostty)
     python314Packages.qtile
     python314Packages.qtile-extras
+    xdg-desktop-portal
+    xdg-desktop-portal-wlr
+    xdg-desktop-portal-gtk
   ];
+
+  home.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    GDK_BACKEND = "wayland";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_CURRENT_DESKTOP = "qtile";
+    FONTCONFIG_PATH = "${homeDir}/.config/fontconfig";
+    FONTCONFIG_FILE = "${homeDir}/.config/fontconfig/fonts.conf";
+  };
 
 
   home.file = {

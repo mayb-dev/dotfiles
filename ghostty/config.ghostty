@@ -8,3 +8,4 @@ window-padding-x = 15
 window-padding-y = 15
 window-theme = ghostty
 confirm-close-surface = false
+window-decoration = none
