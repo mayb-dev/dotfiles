@@ -1,11 +1,11 @@
 cursor-style = underline
-theme = Rose Pine
+theme = Gruvbox Material
 background-opacity = 0.75
 background-blur = 15
 font-family = Hurmit Nerd Font Mono
 font-size = 15
 window-padding-x = 15
-window-padding-y = 15
+window-padding-y = 12
 window-theme = ghostty
 confirm-close-surface = false
 window-decoration = none

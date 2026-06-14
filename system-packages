@@ -1,5 +1,9 @@
 libinput-config
-pipewire pipewire-utils pipewire-alsa pipewire-pulseaudio wireplumber
-pavucontrol
+pipewire 
+pipewire-utils 
+pipewire-alsa 
+pipewire-pulseaudio 
+wireplumber
 fontconfig
 dbus-daemon
+fastfetch

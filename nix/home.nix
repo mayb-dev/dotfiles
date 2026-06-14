@@ -3,6 +3,12 @@
 let
   homeDir = "/home/mpatel";
   dotfilesDir = "${homeDir}/develop/dotfiles";
+
+  qtileEnv = pkgs.python314.withPackages (ps: [
+    ps.qtile
+    ps.qtile-extras
+  ]);
+
 in
 
 {
@@ -21,7 +27,7 @@ in
     history.size = 10000;
     initContent = ''
       alias hms="home-manager switch --flake ~/develop/dotfiles/nix#mpatel -b backup --show-trace"
-      alias start-qtile="dbus-run-session qtile start -s wayland"
+      alias start-qtile="dbus-run-session qtile start -b wayland"
       alias pbcopy="wl-copy"
       alias pbpaste="wl-paste"
       alias v="nvim"
@@ -72,23 +78,24 @@ in
     </fontconfig>
   '';
 
+
   home.packages = with pkgs; [
     neovim
     go
     gcc
     btop
     ripgrep
-    fastfetch
 
     fontconfig
     nerd-fonts.hurmit
     # display stuff to be move to module 
     (config.lib.nixGL.wrap ghostty)
-    (config.lib.nixGL.wrap python314Packages.qtile)
-    (config.lib.nixGL.wrap python314Packages.qtile-extras)
+    (config.lib.nixGL.wrap qtileEnv)
     xdg-desktop-portal
     xdg-desktop-portal-wlr
     xdg-desktop-portal-gtk
+    libinput
+    hyprland
 
     # audio
     pavucontrol
@@ -119,6 +126,10 @@ in
   home.file = {
     ".config/qtile" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/qtile";
+    };
+
+    ".config/hypr" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/hypr";
     };
 
     ".xinitrc" = {
