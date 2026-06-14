@@ -91,11 +91,11 @@ in
     # display stuff to be move to module 
     (config.lib.nixGL.wrap ghostty)
     (config.lib.nixGL.wrap qtileEnv)
+    (config.lib.nixGL.wrap hyprland)
     xdg-desktop-portal
     xdg-desktop-portal-wlr
     xdg-desktop-portal-gtk
     libinput
-    hyprland
 
     # audio
     pavucontrol
