@@ -232,10 +232,10 @@ hl.device({
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(notes))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
-local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
+local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M",
   hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
@@ -247,7 +247,11 @@ hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd([[
-  ~/.config/scripts/reload-waybar.sh && ~/.config/scripts/reload-wpaperd.sh
+  ~/.config/scripts/reload-waybar.sh
+]]))
+
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd([[
+  ~/.config/scripts/reload-wpaperd.sh
 ]]))
 
 -- Move focus with mainMod + arrow keys
