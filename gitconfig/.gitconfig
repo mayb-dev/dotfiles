@@ -1,10 +1,6 @@
 [init]
   defaultBranch = "main"
 
-[user]
-	email = homelab.2024@proton.me
-	name = Meet Patel
-
 [core]
   pager = delta
 
