@@ -116,6 +116,7 @@ in
     yazi
     obsidian
     waybar
+    brightnessctl
   ];
 
   home.sessionVariables = {
@@ -132,7 +133,7 @@ in
     enable = true;
     settings = {
       default = {
-        duration = "1m";
+        duration = "5m";
         sorting = "random";
         path = "${homeDir}/Pictures/Wallpapers/rose-pine-wallpapers/irl";
       };
