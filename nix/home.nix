@@ -91,6 +91,7 @@ in
 
     fontconfig
     noto-fonts
+    noto-fonts-color-emoji
     nerd-fonts.geist-mono
     # display stuff to be move to module 
     (config.lib.nixGL.wrap wezterm)
