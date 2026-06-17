@@ -134,7 +134,7 @@ in
       default = {
         duration = "1m";
         sorting = "random";
-        path = "${homeDir}/Pictures/Wallpapers/rose-pine-wallpapers/minimalistic";
+        path = "${homeDir}/Pictures/Wallpapers/rose-pine-wallpapers/irl";
       };
     };
   };
@@ -183,8 +183,13 @@ in
     ".config/oh-my-posh/prompt.json" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/oh-my-posh/prompt.json";
     };
+
     ".config/tmux" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/tmux";
+    };
+
+    ".config/scripts" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/scripts";
     };
 
     "Pictures/Wallpapers/gruvbox-wallpapers" = {

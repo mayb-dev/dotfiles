@@ -179,8 +179,8 @@ hl.config({
 
 hl.config({
   misc = {
-    force_default_wallpaper = -1,        -- Set to 0 or 1 to disable the anime mascot wallpapers
-    disable_hyprland_logo   = false,     -- If true disables the random hyprland logo / anime girl background. :(
+    force_default_wallpaper = 0,        -- Set to 0 or 1 to disable the anime mascot wallpapers
+    disable_hyprland_logo   = true,     -- If true disables the random hyprland logo / anime girl background. :(
   },
 })
 
@@ -246,7 +246,9 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("pkill -9 waybar && waybar &"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd([[
+  ~/.config/scripts/reload-waybar.sh && ~/.config/scripts/reload-wpaperd.sh
+]]))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
