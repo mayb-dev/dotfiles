@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
--- vim.keymap.set("n", "<leader><leader>", vim.cmd.Ex)
+vim.keymap.set("n", "<leader><leader>", vim.cmd.Ex)
 vim.keymap.set("n", "<C-x>", function() vim.cmd(":q!") end)
 
 vim.keymap.set("n", "G", "Gzz")
@@ -28,7 +28,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set({"n"}, "<leader>f", vim.lsp.buf.format)
+vim.keymap.set({ "n" }, "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 --In telescope to jump easier vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)

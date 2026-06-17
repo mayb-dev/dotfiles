@@ -17,6 +17,23 @@ return {
     name = "darkplus"
   },
   {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "sainnhe/gruvbox-material",
+    name = "gruvbox-material",
+    config = function ()
+      vim.o.background = "dark"
+
+      vim.g.gruvbox_material_background = "hard"
+      vim.g.gruvbox_material_foreground = "original"
+    end
+
+  },
+  {
     "projekt0n/github-nvim-theme",
     name = "github-theme"
   },

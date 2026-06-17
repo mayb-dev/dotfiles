@@ -21,15 +21,15 @@
       pkgs = import nixpkgs {
         inherit system;
         config = {
-	  allowUnfree = true; # for proprietery packages
-	};
+          allowUnfree = true; # for proprietery packages
+        };
       };
     in
 {
     homeConfigurations = {
       "mpatel" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-	extraSpecialArgs = { inherit nixgl; };
+        inherit pkgs;
+        extraSpecialArgs = { inherit nixgl; };
         modules = [ 
 	  ./home.nix
 	];
