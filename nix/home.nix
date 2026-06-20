@@ -118,7 +118,10 @@ in
     obsidian
     waybar
     brightnessctl
+    quickshell
+    cmatrix
   ];
+
 
   home.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
@@ -136,7 +139,7 @@ in
       default = {
         duration = "5m";
         sorting = "random";
-        path = "${homeDir}/Pictures/Wallpapers/rose-pine-wallpapers/irl";
+        path = "${homeDir}/Pictures/Wallpapers/rose-pine-wallpapers/mix";
       };
     };
   };
@@ -146,12 +149,20 @@ in
       source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/qtile";
     };
 
+    ".config/fastfetch" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/fastfetch";
+    };
+
     ".config/hypr" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/hypr";
     };
 
     ".config/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/waybar";
+    };
+
+    ".config/quickshell" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/quickshell";
     };
 
     ".xinitrc" = {
